@@ -8,7 +8,7 @@ src="/logo/d3-logo-final.svg"
 alt="D3 Solutions Group logo"
 style={{ width: "100%", maxWidth: "520px", marginBottom: "1.5rem" }}
 />
-<p className="eyebrow">Strategic Operational Consulting</p>
+<p className="eyebrow">Strategic Operational Consulting for Growth, Efficiency, and Execution</p>
 <h1>Are band-aids over your problems actually leaving your business exposed?</h1>
 <p className="subheadline">
 D3 Solutions Group helps organizations scale, improve efficiency,

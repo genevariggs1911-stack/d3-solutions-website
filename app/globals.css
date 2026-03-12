@@ -34,12 +34,59 @@ min-height: 100vh;
 }
 
 .container {
-width: min(1100px, calc(100% - 2rem));
+width: min(1140px, calc(100% - 2rem));
 margin: 0 auto;
 }
 
+.site-header {
+position: sticky;
+top: 0;
+z-index: 20;
+background: rgba(252, 250, 246, 0.95);
+border-bottom: 1px solid var(--line);
+backdrop-filter: blur(10px);
+}
+
+.nav {
+display: flex;
+align-items: center;
+justify-content: space-between;
+gap: 1rem;
+padding: 1rem 0;
+}
+
+.nav-brand {
+display: flex;
+align-items: center;
+}
+
+.nav-logo {
+width: 240px;
+max-width: 100%;
+height: auto;
+display: block;
+}
+
+.nav-links {
+display: flex;
+align-items: center;
+gap: 1.25rem;
+flex-wrap: wrap;
+}
+
 .hero {
-padding: 6rem 0 4rem;
+padding: 5rem 0 4rem;
+}
+
+.hero-grid {
+display: grid;
+grid-template-columns: 1.1fr 0.9fr;
+gap: 2rem;
+align-items: start;
+}
+
+.hero-copy-wrap {
+max-width: 680px;
 }
 
 .eyebrow {
@@ -48,12 +95,13 @@ font-weight: 700;
 text-transform: uppercase;
 letter-spacing: 0.08em;
 font-size: 0.85rem;
+margin-bottom: 1rem;
 }
 
 h1 {
-font-size: clamp(2.5rem, 5vw, 4.5rem);
-line-height: 1.05;
-margin: 0.5rem 0 1rem;
+font-size: clamp(2.6rem, 5vw, 4.8rem);
+line-height: 1.04;
+margin: 0 0 1rem;
 }
 
 h2 {
@@ -63,12 +111,14 @@ margin-bottom: 1rem;
 
 h3 {
 margin-top: 0;
+margin-bottom: 0.5rem;
 }
 
 .subheadline {
 font-size: 1.2rem;
 color: var(--slate);
 max-width: 60ch;
+margin-bottom: 1rem;
 }
 
 .body-copy {
@@ -79,14 +129,15 @@ max-width: 62ch;
 display: flex;
 gap: 1rem;
 flex-wrap: wrap;
-margin-top: 1.5rem;
+margin-top: 1.75rem;
 }
 
 .button {
 display: inline-block;
-padding: 0.9rem 1.2rem;
+padding: 0.95rem 1.25rem;
 border-radius: 999px;
 font-weight: 700;
+transition: 0.2s ease;
 }
 
 .button.primary {
@@ -94,9 +145,17 @@ background: var(--crimson);
 color: white;
 }
 
+.button.primary:hover {
+background: var(--crimson-dark);
+}
+
 .button.secondary {
 border: 1px solid var(--line);
 background: white;
+}
+
+.button.small {
+padding: 0.7rem 1rem;
 }
 
 .section {
@@ -116,6 +175,19 @@ border-radius: 18px;
 padding: 1.5rem;
 }
 
+.hero-panel {
+background: white;
+border: 1px solid var(--line);
+border-radius: 24px;
+padding: 1.5rem;
+box-shadow: 0 12px 30px rgba(0, 0, 0, 0.05);
+}
+
+.hero-points {
+display: grid;
+gap: 1rem;
+}
+
 .contact-form {
 display: grid;
 gap: 1rem;
@@ -132,8 +204,18 @@ font: inherit;
 background: white;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 900px) {
+.hero-grid,
 .grid.three {
 grid-template-columns: 1fr;
+}
+
+.nav {
+flex-direction: column;
+align-items: flex-start;
+}
+
+.nav-logo {
+width: 200px;
 }
 }

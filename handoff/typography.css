@@ -1,0 +1,43 @@
+/**
+ * Base typography and editorial defaults.
+ * Import after tokens.css.
+ */
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--sans);
+  font-size: 16px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  font-feature-settings: "tnum" 1, "ss01" 1;
+  transition: background-color 320ms ease, color 320ms ease;
+  overflow-x: hidden;
+}
+
+/* Themed transitions on any child element */
+body * {
+  transition: background-color 320ms ease, color 320ms ease, border-color 320ms ease;
+}
+
+/* Custom text selection — accent-bound */
+::selection { background: var(--selection); }
+
+/* Discretionary ligatures on display serif */
+.display, h1, h2, h3, .mark {
+  font-feature-settings: "ss01" 1, "dlig" 1, "tnum" 1;
+}
+
+/* Respect reduced motion across the whole site */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
